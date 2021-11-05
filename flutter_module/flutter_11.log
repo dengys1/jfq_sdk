@@ -1,0 +1,107 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter assemble --output=/Users/soulgame_admin/Library/Developer/Xcode/DerivedData/Runner-cldniiwavixqwpbgbnyxngnuifyk/Build/Products/Debug-iphoneos/ -dTargetPlatform=ios -dTargetFile=lib/main.dart -dBuildMode=release -dIosArchs=arm64 -dSdkRoot=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk -dSplitDebugInfo= -dTreeShakeIcons=true -dTrackWidgetCreation=false -dDartObfuscation=false -dEnableBitcode=true --ExtraGenSnapshotOptions= --DartDefines= --ExtraFrontEndOptions= release_ios_bundle_flutter_assets
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for /Users/soulgame_admin/Documents/flutter/bin/cache/artifacts/engine/ios-release/gen_snapshot_arm64.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:124:5)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:40:30)
+#2      ErrorHandlingProcessManager.start.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:638:33)
+#3      _run (package:flutter_tools/src/base/error_handling_io.dart:532:20)
+#4      ErrorHandlingProcessManager.start (package:flutter_tools/src/base/error_handling_io.dart:638:12)
+#5      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:472:28)
+#6      _DefaultProcessUtils.stream (package:flutter_tools/src/base/process.dart:491:35)
+#7      GenSnapshot.run (package:flutter_tools/src/base/build.dart:73:26)
+#8      AOTSnapshotter.build (package:flutter_tools/src/base/build.dart:194:56)
+#9      AotAssemblyBase.build (package:flutter_tools/src/build_system/targets/ios.dart:96:31)
+#10     _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:796:27)
+<asynchronous suspension>
+#11     Future.wait.<anonymous closure> (dart:async/future.dart)
+<asynchronous suspension>
+#12     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:734:32)
+<asynchronous suspension>
+#13     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:563:16)
+<asynchronous suspension>
+#14     AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:220:32)
+<asynchronous suspension>
+#15     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:1157:12)
+<asynchronous suspension>
+#16     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1009:27)
+<asynchronous suspension>
+#17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#18     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#19     CommandRunner.runCommand (package:args/command_runner.dart:197:13)
+<asynchronous suspension>
+#20     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:278:9)
+<asynchronous suspension>
+#21     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#22     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#23     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:234:5)
+<asynchronous suspension>
+#24     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#25     run.<anonymous closure> (package:flutter_tools/runner.dart:62:12)
+<asynchronous suspension>
+#26     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#27     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#28     runInContext (package:flutter_tools/src/context_runner.dart:73:10)
+<asynchronous suspension>
+#29     main (package:flutter_tools/executable.dart:90:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.0.5, on macOS 11.5 20G71 darwin-x64, locale zh-Hans-CN)
+    • Flutter version 2.0.5 at /Users/soulgame_admin/Documents/flutter
+    • Framework revision adc687823a (7 months ago), 2021-04-16 09:40:20 -0700
+    • Engine revision b09f014e96
+    • Dart version 2.12.3
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at /Users/soulgame_admin/Library/Android/sdk
+    • Platform android-30, build-tools 29.0.2
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6915495)
+    • All Android licenses accepted.
+
+[!] Xcode - develop for iOS and macOS
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 13.0, Build version 13A233
+    ! CocoaPods 1.9.1 out of date (1.10.0 is recommended).
+        CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To upgrade see https://guides.cocoapods.org/using/getting-started.html#installation for instructions.
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 4.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6915495)
+
+[✓] Connected device (3 available)
+    • MAR AL00 (mobile) • 9HQDU19413000070                         • android-arm64  • Android 10 (API 29)
+    • iPhone (mobile)   • 0842596c57cd692cf75a33716a7455035bee7c20 • ios            • iOS 14.0
+    • Chrome (web)      • chrome                                   • web-javascript • Google Chrome 95.0.4638.54
+
+! Doctor found issues in 1 category.
+```
