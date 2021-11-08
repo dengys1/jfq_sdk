@@ -17,9 +17,9 @@ jobs:
       #想让我们CI做的事情！
       - run: cd flutter_module && flutter build ios-framework --cocoapods --output=../framework
       - run: |
+         git config --global http.version HTTP/1.1
          git add .
          git commit -m 'update flutter framework'
-         git config --global http.postBuffer 157286400
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
