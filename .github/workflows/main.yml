@@ -15,7 +15,7 @@ jobs:
           flutter-version: '2.5.3'
           channel: 'stable'
       #想让我们CI做的事情！
-      - run: cd flutter_model && flutter build ios-framework --cocoapods --output=../
+      - run: cd flutter_model && flutter build ios-framework --cocoapods --output=..
       - run: |
          git add .
          git commit -m 'update flutter framework'
